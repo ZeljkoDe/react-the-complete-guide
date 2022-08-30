@@ -41,9 +41,20 @@ const ExpenseFrom = () => {
     //   return { ...prevState, enterdDate: e.target.value };
     // });
   };
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const expenseData = {
+      title: enterdTitle,
+      amount: enterdAmount,
+      date: new Date(enterdDate)
+    };
+
+    console.log(expenseData);
+  };
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -59,7 +70,7 @@ const ExpenseFrom = () => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button>Add expense</button>
+        <button type='submit'>Add expense</button>
       </div>
     </form>
   );
