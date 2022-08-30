@@ -13,23 +13,32 @@ const ExpenseFrom = () => {
 
   const titleChangeHandler = (e) => {
     // setEnterdTitle(e.target.value);
-    setUserInput({
-      ...userInput,
-      enterdTitle: e.target.value
+    // setUserInput({
+    //   ...userInput,
+    //   enterdTitle: e.target.value
+    // });
+    setUserInput((prevState) => {
+      return { ...prevState, enterdTitle: e.target.value };
     });
   };
   const amountChangeHandler = (e) => {
     // setEnterdAmount(e.target.value);
-    setUserInput({
-      ...userInput,
-      enterdAmount: e.target.value
+    // setUserInput({
+    //   ...userInput,
+    //   enterdAmount: e.target.value
+    // });
+    setUserInput((prevState) => {
+      return { ...prevState, enterdAmount: e.target.value };
     });
   };
   const dateChangeHandler = (e) => {
     // setEnterdDate(e.target.value);
-    setUserInput({
-      ...userInput,
-      enterdDate: e.target.value
+    // setUserInput({
+    //   ...userInput,
+    //   enterdDate: e.target.value
+    // });
+    setUserInput((prevState) => {
+      return { ...prevState, enterdDate: e.target.value };
     });
   };
 
