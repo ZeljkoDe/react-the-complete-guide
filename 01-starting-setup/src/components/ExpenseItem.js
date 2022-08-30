@@ -1,13 +1,19 @@
-import './ExpenseItem.css'
+import ExpenseDate from './ExpenseDate';
+import './ExpenseItem.css';
 
-const ExpenseItem = () => (
-    <div className="expense-item">
-        <div>March 28th 2022</div>
-        <div className="expense-item__description">
-            <h2>Car Insurence</h2>
-            <div className="expense-item__price">$200</div>
+
+const ExpenseItem = ({ date, title, amount }) => {
+    return (
+        <div className="expense-item">
+
+            <ExpenseDate date={date} />
+
+            <div className="expense-item__description">
+                <h2>{title}</h2>
+                <div className="expense-item__price">$ {amount}</div>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default ExpenseItem;
