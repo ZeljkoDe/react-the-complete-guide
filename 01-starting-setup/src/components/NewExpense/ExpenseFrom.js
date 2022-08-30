@@ -2,44 +2,44 @@ import { useState } from 'react';
 import './ExpenseFrom.css';
 
 const ExpenseFrom = () => {
-  // const [enterdTitle, setEnterdTitle] = useState('');
-  // const [enterdAmount, setEnterdAmount] = useState('');
-  // const [enterdDate, setEnterdDate] = useState('');
-  const [userInput, setUserInput] = useState({
-    enterdTitle: '',
-    enterdAmount: '',
-    enterdDate: ''
-  });
+  const [enterdTitle, setEnterdTitle] = useState('');
+  const [enterdAmount, setEnterdAmount] = useState('');
+  const [enterdDate, setEnterdDate] = useState('');
+  // const [userInput, setUserInput] = useState({
+  //   enterdTitle: '',
+  //   enterdAmount: '',
+  //   enterdDate: ''
+  // });
 
   const titleChangeHandler = (e) => {
-    // setEnterdTitle(e.target.value);
+    setEnterdTitle(e.target.value);
     // setUserInput({
     //   ...userInput,
     //   enterdTitle: e.target.value
     // });
-    setUserInput((prevState) => {
-      return { ...prevState, enterdTitle: e.target.value };
-    });
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enterdTitle: e.target.value };
+    // });
   };
   const amountChangeHandler = (e) => {
-    // setEnterdAmount(e.target.value);
+    setEnterdAmount(e.target.value);
     // setUserInput({
     //   ...userInput,
     //   enterdAmount: e.target.value
     // });
-    setUserInput((prevState) => {
-      return { ...prevState, enterdAmount: e.target.value };
-    });
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enterdAmount: e.target.value };
+    // });
   };
   const dateChangeHandler = (e) => {
-    // setEnterdDate(e.target.value);
+    setEnterdDate(e.target.value);
     // setUserInput({
     //   ...userInput,
     //   enterdDate: e.target.value
     // });
-    setUserInput((prevState) => {
-      return { ...prevState, enterdDate: e.target.value };
-    });
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enterdDate: e.target.value };
+    // });
   };
 
   return (
