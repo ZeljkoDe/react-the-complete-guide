@@ -1,19 +1,19 @@
 import './ExpensesFilter.css';
 
-const ExpensesFilter = ({ onFilterSelection }) => {
-    const selectionHandler = (e) => {
-        onFilterSelection(e.target.value);
+const ExpensesFilter = ({ onChangeFilter, selected }) => {
+    const dropdownChangeHandler = (e) => {
+        onChangeFilter(e.target.value);
     };
 
     return (
         <div className='expenses-filter'>
             <div className='expenses-filter__control'>
                 <label>Filter by year</label>
-                <select onChange={selectionHandler}>
-                    <option value='2022'>2022</option>
-                    <option value='2021'>2021</option>
-                    <option value='2020'>2020</option>
+                <select onChange={dropdownChangeHandler} value={selected}>
                     <option value='2019'>2019</option>
+                    <option value='2020'>2020</option>
+                    <option value='2021'>2021</option>
+                    <option value='2022'>2022</option>
                 </select>
             </div>
         </div>

@@ -6,17 +6,20 @@ import ExpensesFilter from "./ExpensesFilter";
 
 
 const Expenses = ({ expenses }) => {
-    const [selectedFilter, setSelectedFilter] = useState('')
+    const [filteredYear, setFilteredYear] = useState('2022');
 
-    const filterHandler = (selected) => {
-        setSelectedFilter(selected);
-    }
+    const filterChangeHandler = (selected) => {
+        setFilteredYear(selected);
+    };
 
-    console.log(selectedFilter);
+    console.log(filteredYear);
 
     return (
         <Card className="expenses">
-            <ExpensesFilter onFilterSelection={filterHandler} />
+            <div>
+                <ExpensesFilter onChangeFilter={filterChangeHandler} selected={filteredYear}/>
+            </div>
+
             {
                 expenses.map(item => (
                     <ExpenseItem
