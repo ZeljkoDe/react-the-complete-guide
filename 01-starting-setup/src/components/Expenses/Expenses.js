@@ -19,7 +19,7 @@ const Expenses = ({ expenses }) => {
             </div>
 
             {
-                expenses.map(item => (
+                expenses.filter(item => item.date.getFullYear().toString() === filteredYear).map(item => (
                     <ExpenseItem
                         key={item.id}
                         title={item.title}
