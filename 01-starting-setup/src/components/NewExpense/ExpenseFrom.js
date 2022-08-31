@@ -20,7 +20,7 @@ const ExpenseFrom = ({ onSaveExpenseData, onCancel }) => {
 
     const expenseData = {
       title: enterdTitle,
-      amount: enterdAmount,
+      amount: +enterdAmount,
       date: new Date(enterdDate)
     };
 
