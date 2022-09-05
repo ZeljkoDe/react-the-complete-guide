@@ -1,0 +1,17 @@
+.user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form__buton {
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: purple;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.user-form__buton:hover {
+    opacity: 0.8;
+}
