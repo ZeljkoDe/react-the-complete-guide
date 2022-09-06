@@ -1,12 +1,16 @@
 import Card from '../UI/Card';
-import './Users.css'
+import './Users.css';
 
-const Users = () => {
-  return (
-    <Card>
-        <p className='user'>Max (31 years old)</p>
-    </Card>
-  )
-}
+const Users = ({ users }) => {
+	return (
+		<Card>
+			{users.map((user) => (
+				<p key={user.id} className="user">
+					{user.name} ({user.age} years old)
+				</p>
+			))}
+		</Card>
+	);
+};
 
-export default Users
+export default Users;

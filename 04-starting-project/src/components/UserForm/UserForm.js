@@ -1,18 +1,46 @@
+import { useState } from 'react';
 import Card from '../UI/Card';
 import './UserForm.css';
-import UserInput from './UserInput';
 
-const UserForm = () => {
-	
-	const onSubmit = () => {
+const UserForm = ({ onAddUser }) => {
+	const [userName, setUserName] = useState('');
+	const [userAge, setUserAge] = useState('');
 
-	}
+	const handleUserName = (e) => {
+		setUserName(e.target.value);
+	};
+
+	const handleUserAge = (e) => {
+		setUserAge(e.target.value);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		onAddUser(userName, userAge);
+
+		setUserAge('');
+		setUserName('');
+	};
+
 	return (
 		<Card>
-			<form className="user-form">
-
-				<UserInput labelText={'Username'} />
-				<UserInput labelText={'Age(years)'} />
+			<form onSubmit={handleSubmit} className="user-form">
+				<div className="user-form__input">
+					<label>Username</label>
+					<input
+						onChange={handleUserName}
+						type="text"
+						value={userName}
+					/>
+				</div>
+				<div className="user-form__input">
+					<label>Age(years)</label>
+					<input
+						onChange={handleUserAge}
+						type="text"
+						value={userAge}
+					/>
+				</div>
 
 				<button className="user-form__buton" type="submit">
 					Add User
